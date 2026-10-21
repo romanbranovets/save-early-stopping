@@ -1,0 +1,61 @@
+# NinaPro DB5: 10 subjects x 2 schedules, 60 configurations each, T = 50 epochs.
+# Baselines use the LCBench settings selected on all 35 datasets at once.
+# Prices are per full training (cT); the price per epoch is cT / T.
+benchmark: db5
+T: 50
+budget: 1000
+slots: 60
+t_min: 2
+orders: 40
+final_phase: true
+methods:
+  no-stop: {}
+  save:
+    price: 0.000792446596230557
+    paths: 400
+  save-threshold:
+    delta: 0.027386127875258306
+  save-completed-donors:
+    price: 0.000792446596230557
+    paths: 400
+  save-multiplicative-uniform:
+    price: 0.000792446596230557
+    paths: 400
+  median:
+    grace: 1
+    patience: 10
+  successive-halving:
+    r: 3
+    eta: 3
+  hyperband:
+    r: 1
+    eta: 4
+    max_resource: 50
+  asha:
+    r: 3
+    eta: 3
+  cl2017:                   # the threshold of parametric-threshold
+    delta: 0.0812202
+  cl2017-value:
+    price: 0.000792446596230557
+  lcpfn-threshold:
+    delta: 0.2899597984812228
+  lcpfn-value:
+    price: 0.03154786722400965
+  parametric-threshold:
+    delta: 0.0812202
+  parametric-value:
+    price: 0.0250593616813636
+  fixed-budget:
+    epochs: 5
+  fixed-budget-tmin:
+    epochs: 2
+  ftpfn-threshold:          # not selected: the LC-PFN threshold and price
+    delta: 0.28996
+  ftpfn-value:
+    price: 0.03154785
+  oracle-perfect-forecast:
+    price: 0.000792446596230557
+  oracle-best-on-average: {}
+  oracle-all-knowing: {}
+price_sensitivity: [0.0, 0.000125, 0.00031549999999999997, 0.000792446596230557, 0.001255, 0.00199, 0.0031550000000000003, 0.005]

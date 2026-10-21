@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+build/
+# prepared benchmark arrays and raw downloads (made by scripts/download_data.py)
+data/raw/
+data/nb201_*.npz
+data/lcbench/
+# outputs
+results/
+tables/
+*.part
+.ruff_cache/

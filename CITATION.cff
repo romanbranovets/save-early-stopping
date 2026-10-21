@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "SAVE: Search-Aware Value-Based Early Stopping for Hyperparameter Optimization in Deep Learning"
+type: software
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: "TODO"
+    given-names: "TODO"
+repository-code: "TODO: GitHub URL"
+preferred-citation:
+  type: article
+  title: "SAVE: Search-Aware Value-Based Early Stopping for Hyperparameter Optimization in Deep Learning"
+  authors:
+    - family-names: "TODO"
+      given-names: "TODO"
+  journal: "Neurocomputing"
+  year: 2026
+  doi: "TODO"

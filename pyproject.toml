@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "save-early-stopping"
+version = "1.0.0"
+description = "SAVE: Search-Aware Value-Based Early Stopping for hyperparameter optimization"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+# LC-PFN and FT-PFN forecasts; the paper's tables were computed with torch 1.11, lcpfn 0.1.3, ifbo 0.4.1
+pfn = ["torch>=1.11", "lcpfn==0.1.3", "ifbo==0.4.1"]
+# recording the NinaPro DB5 curves (scripts/db5_train.py)
+db5 = ["torch>=2.0"]
+
+[tool.setuptools.packages.find]
+include = ["save*"]
+
+[tool.ruff]
+line-length = 130
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E741", "B905"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["E402"]

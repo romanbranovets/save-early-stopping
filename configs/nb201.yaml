@@ -1,0 +1,58 @@
+# NAS-Bench-201: every second epoch of 200, so T = 100 grid steps; epochs below are grid steps.
+# Prices are per full training (cT); the price per step is cT / T.
+benchmark: nb201
+T: 100
+budget: 2000
+slots: 1000
+t_min: 2
+orders: 40
+pool_sizes: [60, 120, 250, 500, 1000]
+methods:
+  no-stop: {}
+  save:
+    price: 0.000792446596230557
+    paths: 400
+  save-threshold:
+    delta: 0.027386127875258306
+  save-completed-donors:
+    price: 0.000792446596230557
+    paths: 400
+  save-multiplicative-uniform:
+    price: 0.000792446596230557
+    paths: 400
+  median:
+    grace: 2
+    patience: 20
+  successive-halving:
+    r: 2
+    eta: 3
+  hyperband:
+    r: 2
+    eta: 4
+    max_resource: 100
+  asha:
+    r: 2
+    eta: 4
+  cl2017:
+    delta: 0.500262426268948
+  cl2017-value:
+    price: 0.012559432157547897
+  lcpfn-threshold:
+    delta: 0.015815537080177643
+  lcpfn-value:
+    price: 0.0
+  parametric-value:
+    price: 0.0
+  fixed-budget:
+    epochs: 50
+  fixed-budget-tmin:
+    epochs: 2
+  ftpfn-threshold:          # not selected: the LC-PFN threshold and price of NinaPro DB5
+    delta: 0.28996
+  ftpfn-value:
+    price: 0.03154785
+  oracle-perfect-forecast:
+    price: 0.000792446596230557
+  oracle-best-on-average: {}
+  oracle-all-knowing: {}
+price_sensitivity: [0.0, 0.000125, 0.00031549999999999997, 0.000792446596230557, 0.001255, 0.00199, 0.0031550000000000003, 0.005]

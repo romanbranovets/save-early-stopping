@@ -1,0 +1,126 @@
+# NinaPro DB5 search space: 60 configurations drawn once (seed 777), the same for every subject and schedule.
+# cnn: conv_layers x [conv(channels, kernel) - batch norm - ReLU - max pool 2] - fc - ReLU - dropout - output
+# mlp: `layers` hidden layers of `width` units (ReLU, dropout) on 80 EMG features (MAV, RMS, WL, ZC, SSC per channel)
+# all: SGD, Nesterov momentum 0.9, learning rate lr, weight_decay, batch size `batch`.
+seed: 777
+configs:
+- {family: cnn, channels: 64, conv_layers: 3, fc: 128, kernel: 5, dropout: 0.485,
+  lr: 0.0145, weight_decay: 0.0002972, batch: 128, parameters: 94581, index: 0}
+- {family: cnn, channels: 128, conv_layers: 3, fc: 64, kernel: 5, dropout: 0.013,
+  lr: 0.006465, weight_decay: 0.000811, batch: 128, parameters: 219701, index: 1}
+- {family: mlp, layers: 1, width: 128, dropout: 0.442, lr: 0.06164, weight_decay: 0.0003579,
+  batch: 256, parameters: 17205, index: 2}
+- {family: mlp, layers: 3, width: 128, dropout: 0.351, lr: 0.08068, weight_decay: 0.0003809,
+  batch: 64, parameters: 50229, index: 3}
+- {family: cnn, channels: 64, conv_layers: 1, fc: 128, kernel: 7, dropout: 0.34, lr: 0.05467,
+  weight_decay: 2.069e-05, batch: 64, parameters: 178165, index: 4}
+- {family: cnn, channels: 16, conv_layers: 3, fc: 64, kernel: 7, dropout: 0.424, lr: 0.1298,
+  weight_decay: 0.0001694, batch: 256, parameters: 14149, index: 5}
+- {family: cnn, channels: 128, conv_layers: 3, fc: 64, kernel: 3, dropout: 0.024,
+  lr: 0.001428, weight_decay: 4.436e-05, batch: 128, parameters: 150069, index: 6}
+- {family: cnn, channels: 64, conv_layers: 2, fc: 128, kernel: 5, dropout: 0.087,
+  lr: 0.002454, weight_decay: 0.00153, batch: 256, parameters: 114869, index: 7}
+- {family: cnn, channels: 16, conv_layers: 1, fc: 128, kernel: 3, dropout: 0.067,
+  lr: 0.002459, weight_decay: 1.348e-05, batch: 64, parameters: 48741, index: 8}
+- {family: cnn, channels: 64, conv_layers: 1, fc: 64, kernel: 5, dropout: 0.243, lr: 0.008338,
+  weight_decay: 0.0003008, batch: 128, parameters: 90741, index: 9}
+- {family: mlp, layers: 1, width: 128, dropout: 0.077, lr: 0.007955, weight_decay: 0.004784,
+  batch: 64, parameters: 17205, index: 10}
+- {family: mlp, layers: 2, width: 256, dropout: 0.118, lr: 0.008084, weight_decay: 4.223e-05,
+  batch: 256, parameters: 100149, index: 11}
+- {family: mlp, layers: 3, width: 256, dropout: 0.046, lr: 0.09666, weight_decay: 0.002465,
+  batch: 64, parameters: 165941, index: 12}
+- {family: cnn, channels: 64, conv_layers: 2, fc: 256, kernel: 5, dropout: 0.139,
+  lr: 0.1491, weight_decay: 1.524e-05, batch: 256, parameters: 203701, index: 13}
+- {family: mlp, layers: 1, width: 64, dropout: 0.228, lr: 0.0447, weight_decay: 0.001968,
+  batch: 64, parameters: 8629, index: 14}
+- {family: cnn, channels: 64, conv_layers: 3, fc: 64, kernel: 7, dropout: 0.24, lr: 0.002588,
+  weight_decay: 0.000238, batch: 128, parameters: 89077, index: 15}
+- {family: cnn, channels: 32, conv_layers: 3, fc: 256, kernel: 7, dropout: 0.414,
+  lr: 0.06753, weight_decay: 0.0008358, batch: 256, parameters: 73045, index: 16}
+- {family: mlp, layers: 1, width: 128, dropout: 0.029, lr: 0.09576, weight_decay: 1.379e-05,
+  batch: 128, parameters: 17205, index: 17}
+- {family: mlp, layers: 2, width: 64, dropout: 0.31, lr: 0.04151, weight_decay: 8.426e-05,
+  batch: 256, parameters: 12789, index: 18}
+- {family: mlp, layers: 2, width: 256, dropout: 0.282, lr: 0.003784, weight_decay: 0.007386,
+  batch: 64, parameters: 100149, index: 19}
+- {family: cnn, channels: 32, conv_layers: 2, fc: 256, kernel: 3, dropout: 0.055,
+  lr: 0.001766, weight_decay: 0.0002738, batch: 64, parameters: 100597, index: 20}
+- {family: cnn, channels: 32, conv_layers: 3, fc: 256, kernel: 7, dropout: 0.403,
+  lr: 0.0822, weight_decay: 0.004847, batch: 64, parameters: 73045, index: 21}
+- {family: mlp, layers: 1, width: 64, dropout: 0.407, lr: 0.03997, weight_decay: 7.907e-05,
+  batch: 64, parameters: 8629, index: 22}
+- {family: cnn, channels: 128, conv_layers: 2, fc: 64, kernel: 3, dropout: 0.029,
+  lr: 0.001233, weight_decay: 1.811e-05, batch: 64, parameters: 141493, index: 23}
+- {family: mlp, layers: 1, width: 64, dropout: 0.466, lr: 0.03386, weight_decay: 0.0007412,
+  batch: 128, parameters: 8629, index: 24}
+- {family: mlp, layers: 1, width: 128, dropout: 0.297, lr: 0.00726, weight_decay: 1.735e-05,
+  batch: 256, parameters: 17205, index: 25}
+- {family: cnn, channels: 32, conv_layers: 2, fc: 128, kernel: 5, dropout: 0.368,
+  lr: 0.01167, weight_decay: 1.488e-05, batch: 128, parameters: 55797, index: 26}
+- {family: cnn, channels: 128, conv_layers: 2, fc: 128, kernel: 5, dropout: 0.3, lr: 0.2437,
+  weight_decay: 3.877e-05, batch: 64, parameters: 263733, index: 27}
+- {family: mlp, layers: 3, width: 256, dropout: 0.311, lr: 0.04649, weight_decay: 0.0003345,
+  batch: 64, parameters: 165941, index: 28}
+- {family: mlp, layers: 3, width: 256, dropout: 0.139, lr: 0.001083, weight_decay: 0.001989,
+  batch: 128, parameters: 165941, index: 29}
+- {family: mlp, layers: 2, width: 256, dropout: 0.08, lr: 0.08104, weight_decay: 8.062e-05,
+  batch: 64, parameters: 100149, index: 30}
+- {family: cnn, channels: 32, conv_layers: 2, fc: 128, kernel: 5, dropout: 0.412,
+  lr: 0.1959, weight_decay: 8.228e-05, batch: 128, parameters: 55797, index: 31}
+- {family: mlp, layers: 2, width: 64, dropout: 0.208, lr: 0.001964, weight_decay: 0.005547,
+  batch: 64, parameters: 12789, index: 32}
+- {family: mlp, layers: 1, width: 128, dropout: 0.404, lr: 0.001508, weight_decay: 0.0005801,
+  batch: 128, parameters: 17205, index: 33}
+- {family: mlp, layers: 2, width: 256, dropout: 0.358, lr: 0.001079, weight_decay: 0.004525,
+  batch: 256, parameters: 100149, index: 34}
+- {family: cnn, channels: 128, conv_layers: 1, fc: 128, kernel: 3, dropout: 0.413,
+  lr: 0.002075, weight_decay: 3.982e-05, batch: 128, parameters: 341173, index: 35}
+- {family: mlp, layers: 2, width: 256, dropout: 0.11, lr: 0.002318, weight_decay: 0.00202,
+  batch: 64, parameters: 100149, index: 36}
+- {family: cnn, channels: 128, conv_layers: 1, fc: 128, kernel: 3, dropout: 0.144,
+  lr: 0.0242, weight_decay: 0.005042, batch: 256, parameters: 341173, index: 37}
+- {family: cnn, channels: 32, conv_layers: 3, fc: 256, kernel: 7, dropout: 0.081,
+  lr: 0.01841, weight_decay: 0.003181, batch: 64, parameters: 73045, index: 38}
+- {family: cnn, channels: 16, conv_layers: 1, fc: 256, kernel: 3, dropout: 0.389,
+  lr: 0.001528, weight_decay: 2.49e-05, batch: 256, parameters: 96613, index: 39}
+- {family: cnn, channels: 16, conv_layers: 1, fc: 128, kernel: 3, dropout: 0.22, lr: 0.004481,
+  weight_decay: 0.002067, batch: 128, parameters: 48741, index: 40}
+- {family: cnn, channels: 32, conv_layers: 3, fc: 64, kernel: 7, dropout: 0.38, lr: 0.003674,
+  weight_decay: 0.0002445, batch: 64, parameters: 31957, index: 41}
+- {family: mlp, layers: 1, width: 256, dropout: 0.336, lr: 0.004791, weight_decay: 2.4e-05,
+  batch: 64, parameters: 34357, index: 42}
+- {family: mlp, layers: 2, width: 256, dropout: 0.152, lr: 0.1227, weight_decay: 0.0001172,
+  batch: 64, parameters: 100149, index: 43}
+- {family: mlp, layers: 3, width: 128, dropout: 0.372, lr: 0.006005, weight_decay: 0.0001571,
+  batch: 256, parameters: 50229, index: 44}
+- {family: mlp, layers: 3, width: 128, dropout: 0.308, lr: 0.01183, weight_decay: 0.0004995,
+  batch: 256, parameters: 50229, index: 45}
+- {family: cnn, channels: 64, conv_layers: 3, fc: 64, kernel: 5, dropout: 0.429, lr: 0.005194,
+  weight_decay: 0.001523, batch: 64, parameters: 70645, index: 46}
+- {family: mlp, layers: 3, width: 128, dropout: 0.388, lr: 0.003532, weight_decay: 0.0003027,
+  batch: 64, parameters: 50229, index: 47}
+- {family: mlp, layers: 1, width: 64, dropout: 0.023, lr: 0.005524, weight_decay: 0.0009763,
+  batch: 256, parameters: 8629, index: 48}
+- {family: mlp, layers: 1, width: 64, dropout: 0.104, lr: 0.01612, weight_decay: 0.0004579,
+  batch: 256, parameters: 8629, index: 49}
+- {family: cnn, channels: 16, conv_layers: 1, fc: 128, kernel: 3, dropout: 0.424,
+  lr: 0.1371, weight_decay: 1.47e-05, batch: 256, parameters: 48741, index: 50}
+- {family: cnn, channels: 32, conv_layers: 2, fc: 256, kernel: 5, dropout: 0.176,
+  lr: 0.009652, weight_decay: 0.0004371, batch: 128, parameters: 103669, index: 51}
+- {family: cnn, channels: 128, conv_layers: 2, fc: 64, kernel: 5, dropout: 0.086,
+  lr: 0.001701, weight_decay: 1.212e-05, batch: 64, parameters: 178357, index: 52}
+- {family: mlp, layers: 2, width: 64, dropout: 0.057, lr: 0.02633, weight_decay: 0.002512,
+  batch: 128, parameters: 12789, index: 53}
+- {family: mlp, layers: 2, width: 128, dropout: 0.252, lr: 0.04522, weight_decay: 1.597e-05,
+  batch: 256, parameters: 33717, index: 54}
+- {family: cnn, channels: 128, conv_layers: 2, fc: 64, kernel: 3, dropout: 0.482,
+  lr: 0.004131, weight_decay: 1.671e-05, batch: 256, parameters: 141493, index: 55}
+- {family: mlp, layers: 1, width: 64, dropout: 0.11, lr: 0.1245, weight_decay: 0.001426,
+  batch: 256, parameters: 8629, index: 56}
+- {family: cnn, channels: 16, conv_layers: 2, fc: 256, kernel: 5, dropout: 0.017,
+  lr: 0.003504, weight_decay: 0.0002947, batch: 128, parameters: 57493, index: 57}
+- {family: cnn, channels: 64, conv_layers: 1, fc: 64, kernel: 5, dropout: 0.004, lr: 0.02871,
+  weight_decay: 0.009804, batch: 64, parameters: 90741, index: 58}
+- {family: mlp, layers: 2, width: 256, dropout: 0.474, lr: 0.02787, weight_decay: 0.000142,
+  batch: 256, parameters: 100149, index: 59}

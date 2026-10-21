@@ -1,0 +1,95 @@
+# LCBench: 35 datasets, T = 50 epochs.  Baseline settings are selected per dataset on the other 34
+# datasets; `default` is the most common setting and `per_dataset` lists the exceptions.
+# Prices are per full training (cT); the price per epoch is cT / T.
+benchmark: lcbench
+T: 50
+budget: 1000
+slots: 500
+t_min: 2
+orders: 40
+pool_sizes: [60, 120, 250, 500]
+default:
+  methods:
+    no-stop: {}
+    save:
+      price: 0.000792446596230557
+      paths: 400
+    save-threshold:
+      delta: 0.027386127875258306
+    save-completed-donors:
+      price: 0.000792446596230557
+      paths: 400
+    save-multiplicative-uniform:
+      price: 0.000792446596230557
+      paths: 400
+    median:                 # one setting for all 35 datasets
+      grace: 1
+      patience: 10
+    successive-halving:
+      r: 8
+      eta: 3
+    hyperband:
+      r: 3
+      eta: 4
+      max_resource: 50
+    asha:
+      r: 3
+      eta: 3
+    cl2017:                 # the threshold of parametric-threshold
+      delta: 0.056462161732861706
+    cl2017-value:           # the price of SAVE
+      price: 0.000792446596230557
+    lcpfn-threshold:
+      delta: 0.16806516004476105
+    lcpfn-value:
+      price: 0.03154786722400965
+    parametric-threshold:
+      delta: 0.056462161732861706
+    parametric-value:
+      price: 0.019905358527674867
+    fixed-budget:           # not selected
+      epochs: 5
+    fixed-budget-tmin:
+      epochs: 2
+    ftpfn-threshold:
+      delta: 0.04707649670145191
+    oracle-perfect-forecast:
+      price: 0.000792446596230557
+    oracle-best-on-average: {}
+    oracle-all-knowing: {}
+  price_sensitivity: [0.0, 0.000125, 0.00031549999999999997, 0.000792446596230557, 0.001255, 0.00199, 0.0031550000000000003, 0.005]
+per_dataset:
+  APSFailure:
+    parametric-value: {price: 0.06294627058970831}
+  Amazon_employee_access:
+    successive-halving: {r: 1, eta: 2}
+  MiniBooNE:
+    hyperband: {r: 5, eta: 4}
+  airlines:
+    hyperband: {r: 5, eta: 4}
+  bank-marketing:
+    hyperband: {r: 5, eta: 4}
+  blood-transfusion-service-center:
+    hyperband: {r: 5, eta: 4}
+  connect-4:
+    cl2017: {delta: 0.11683446193976738}
+    parametric-threshold: {delta: 0.11683446193976738}
+    successive-halving: {r: 1, eta: 3}
+    hyperband: {r: 1, eta: 4}
+    asha: {r: 1, eta: 3}
+    lcpfn-threshold: {delta: 0.24175998718111943}
+    ftpfn-threshold: {delta: 0.06771905156335707}
+  helena:
+    hyperband: {r: 5, eta: 4}
+  jasmine:
+    hyperband: {r: 5, eta: 4}
+  jungle_chess_2pcs_raw_endgame_complete:
+    hyperband: {r: 5, eta: 4}
+  kc1:
+    hyperband: {r: 5, eta: 4}
+  mfeat-factors:
+    lcpfn-value: {price: 0.03971641173621407}
+  nomao:
+    hyperband: {r: 5, eta: 4}
+  volkert:
+    hyperband: {r: 5, eta: 4}
